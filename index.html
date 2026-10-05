@@ -1,471 +1,664 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Melody ♡</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<style>
+  <title>My Melody ♡</title>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
 
-body {
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
-  color: #756b78;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  background-color: #fbe1ed;
 
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,.75) 0 8px,
-      transparent 9px
-    );
+    body {
 
-  background-size: 58px 58px;
+      min-height: 100vh;
 
-  padding: 20px;
-}
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang SC",
+        "Segoe UI",
+        sans-serif;
 
-/* 整个页面 */
+      color: #8f7484;
 
-.page {
-  width: 100%;
-  max-width: 430px;
-  margin: auto;
-}
+      background-color: #f9dfeb;
 
-/* 顶部小字 */
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.8) 0 9px,
+          transparent 10px
+        );
 
-.top {
-  text-align: center;
-  padding: 18px 0 20px;
-}
+      background-size: 60px 60px;
 
-.top span {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #ba9aaa;
-}
+      padding: 20px;
 
-/* 主图 */
+    }
 
-.hero {
-  overflow: hidden;
-  border-radius: 34px;
-  background: #f9dce9;
 
-  box-shadow:
-    0 15px 35px rgba(151,126,143,.14);
+    .page {
 
-  position: relative;
-}
+      width: 100%;
 
-.hero img {
-  width: 100%;
-  display: block;
-}
+      max-width: 430px;
 
-.hero-text {
-  position: absolute;
+      margin: 0 auto;
 
-  left: 20px;
-  right: 20px;
-  bottom: 18px;
+    }
 
-  background: rgba(255,255,255,.68);
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    /* 顶部标题 */
 
-  border-radius: 22px;
+    .top {
 
-  padding: 15px 18px;
+      text-align: center;
 
-  text-align: center;
-}
+      padding:
+        28px
+        0
+        24px;
 
-.hero-text h1 {
-  font-size: 25px;
-  color: #9b8193;
+    }
 
-  margin-bottom: 4px;
-}
 
-.hero-text p {
-  font-size: 13px;
-  color: #a993a1;
-}
+    .top-text {
 
-/* 小标签 */
+      font-size: 13px;
 
-.tags {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
+      letter-spacing: 5px;
 
-  flex-wrap: wrap;
+      color: #bca3b1;
 
-  margin: 22px 0;
-}
+    }
 
-.tag {
-  padding: 8px 14px;
 
-  border-radius: 999px;
+    /* 美乐蒂主图 */
 
-  background: rgba(255,255,255,.72);
+    .hero {
 
-  border: 1px solid rgba(255,255,255,.9);
+      position: relative;
 
-  font-size: 12px;
+      overflow: hidden;
 
-  color: #a78096;
-}
+      border-radius: 36px;
 
-/* 卡片 */
+      background: #f6d7e5;
 
-.card {
+      box-shadow:
+        0 16px 40px
+        rgba(143, 107, 128, 0.14);
 
-  background:
-    rgba(255,255,255,.72);
+    }
 
-  border:
-    1px solid rgba(255,255,255,.9);
 
-  border-radius: 28px;
+    .hero img {
 
-  padding: 22px;
+      width: 100%;
 
-  margin-bottom: 16px;
+      display: block;
 
-  box-shadow:
-    0 12px 30px rgba(146,118,136,.10);
-}
+      object-fit: cover;
 
-.card-title {
+    }
 
-  font-size: 16px;
 
-  color: #9c7d90;
+    .hero-box {
 
-  margin-bottom: 12px;
-}
+      position: absolute;
 
-.card p {
+      left: 22px;
 
-  font-size: 14px;
+      right: 22px;
 
-  line-height: 1.8;
+      bottom: 22px;
 
-  color: #927f8b;
-}
+      padding:
+        18px
+        16px;
 
-/* 三个小格子 */
+      text-align: center;
 
-.grid {
+      border-radius: 25px;
 
-  display: grid;
+      background:
+        rgba(255, 255, 255, 0.76);
 
-  grid-template-columns:
-    repeat(3, 1fr);
+      backdrop-filter:
+        blur(15px);
 
-  gap: 10px;
+      -webkit-backdrop-filter:
+        blur(15px);
 
-  margin-top: 14px;
-}
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
 
-.item {
+    }
 
-  background:
-    rgba(255,242,248,.9);
 
-  border-radius: 20px;
+    .hero-box h1 {
 
-  padding: 18px 5px;
+      font-size: 30px;
 
-  text-align: center;
+      color: #9c8293;
 
-  font-size: 12px;
+      margin-bottom: 7px;
 
-  color: #a68297;
-}
+    }
 
-.item .emoji {
 
-  font-size: 25px;
+    .hero-box p {
 
-  margin-bottom: 7px;
-}
+      font-size: 13px;
 
-/* 爱心按钮 */
+      color: #b19aa8;
 
-.love {
+      letter-spacing: 1px;
 
-  display: block;
+    }
 
-  width: 100%;
 
-  border: 0;
+    /* 标签 */
 
-  border-radius: 22px;
+    .tags {
 
-  padding: 15px;
+      display: flex;
 
-  background:
-    #efa8c8;
+      justify-content: center;
 
-  color: white;
+      gap: 10px;
 
-  font-size: 14px;
+      flex-wrap: wrap;
 
-  margin-top: 15px;
+      margin:
+        22px
+        0;
 
-  box-shadow:
-    0 8px 18px rgba(217,129,167,.22);
-}
+    }
 
-.love:active {
-  transform: scale(.97);
-}
 
-/* 页脚 */
+    .tag {
 
-footer {
+      padding:
+        9px
+        15px;
 
-  text-align: center;
+      border-radius: 999px;
 
-  font-size: 11px;
+      background:
+        rgba(255, 255, 255, 0.78);
 
-  color: #b89baa;
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.95);
 
-  padding: 12px 0 30px;
-}
+      font-size: 12px;
 
-/* 飘爱心 */
+      color: #a9869b;
 
-.heart {
+      box-shadow:
+        0 5px 15px
+        rgba(150, 110, 130, 0.06);
 
-  position: fixed;
+    }
 
-  pointer-events: none;
 
-  color: #eda3c4;
+    /* 白色卡片 */
 
-  animation:
-    floatHeart 1.6s ease forwards;
-}
+    .card {
 
-@keyframes floatHeart {
+      background:
+        rgba(255, 255, 255, 0.78);
 
-  from {
-    opacity: 1;
-    transform:
-      translateY(0)
-      scale(1);
-  }
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.95);
 
-  to {
-    opacity: 0;
-    transform:
-      translateY(-140px)
-      scale(1.7);
-  }
-}
+      border-radius: 30px;
 
-</style>
+      padding: 24px;
+
+      margin-bottom: 18px;
+
+      box-shadow:
+        0 12px 30px
+        rgba(145, 108, 130, 0.1);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+    }
+
+
+    .card-title {
+
+      font-size: 18px;
+
+      font-weight: 600;
+
+      color: #9b7e90;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .card p {
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      color: #947d8b;
+
+    }
+
+
+    /* 三个小格子 */
+
+    .favorites {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin-top: 15px;
+
+    }
+
+
+    .favorite-item {
+
+      background:
+        rgba(255, 242, 248, 0.95);
+
+      border-radius: 22px;
+
+      padding:
+        18px
+        8px;
+
+      text-align: center;
+
+      color: #aa8499;
+
+      font-size: 12px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    }
+
+
+    .favorite-icon {
+
+      font-size: 27px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    /* 爱心按钮 */
+
+    .love-button {
+
+      width: 100%;
+
+      border: none;
+
+      border-radius: 22px;
+
+      padding: 15px;
+
+      margin-top: 17px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #efabc9,
+          #e99bbb
+        );
+
+      color: white;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      box-shadow:
+        0 8px 20px
+        rgba(218, 124, 163, 0.22);
+
+      transition:
+        transform 0.2s;
+
+    }
+
+
+    .love-button:active {
+
+      transform:
+        scale(0.96);
+
+    }
+
+
+    /* 底部 */
+
+    footer {
+
+      text-align: center;
+
+      padding:
+        12px
+        0
+        30px;
+
+      color: #b99aaa;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* 飘起来的小爱心 */
+
+    .heart {
+
+      position: fixed;
+
+      pointer-events: none;
+
+      color: #e99aba;
+
+      z-index: 999;
+
+      animation:
+        heartFloat
+        1.6s
+        ease
+        forwards;
+
+    }
+
+
+    @keyframes heartFloat {
+
+      from {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+      to {
+
+        opacity: 0;
+
+        transform:
+          translateY(-150px)
+          scale(1.7);
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<div class="page">
 
-  <div class="top">
-    <span>MY MELODY WORLD ♡</span>
-  </div>
+  <main class="page">
 
 
-  <section class="hero">
+    <header class="top">
 
-    <img
-      src="melody.jpg"
-      alt="My Melody">
+      <div class="top-text">
+        MY MELODY WORLD ♡
+      </div>
 
-    <div class="hero-text">
+    </header>
 
-      <h1>
-        welcome ♡
-      </h1>
+
+    <section class="hero">
+
+      <img
+        src="IMG_1658.jpeg"
+        alt="My Melody"
+      >
+
+
+      <div class="hero-box">
+
+        <h1>
+          welcome ♡
+        </h1>
+
+        <p>
+          a tiny pink corner
+          of the internet
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <div class="tags">
+
+      <div class="tag">
+        🎀 melody
+      </div>
+
+      <div class="tag">
+        🌷 pink
+      </div>
+
+      <div class="tag">
+        ♡ cute
+      </div>
+
+    </div>
+
+
+    <section class="card">
+
+      <div class="card-title">
+        🎀 About me
+      </div>
 
       <p>
-        a tiny pink corner of the internet
+        欢迎来到我的小小粉色世界。
+        这里会记录一些喜欢的东西、
+        日常碎片，
+        还有让我开心的小事情 ♡
       </p>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <div class="tags">
+    <section class="card">
 
-    <div class="tag">
-      🎀 melody
-    </div>
-
-    <div class="tag">
-      🌷 pink
-    </div>
-
-    <div class="tag">
-      ♡ cute
-    </div>
-
-  </div>
+      <div class="card-title">
+        ♡ My favorites
+      </div>
 
 
-  <section class="card">
-
-    <div class="card-title">
-      🎀 About me
-    </div>
-
-    <p>
-      欢迎来到我的小小粉色世界。
-      这里会记录一些喜欢的东西、
-      日常碎片，还有让我开心的小事情 ♡
-    </p>
-
-  </section>
+      <div class="favorites">
 
 
-  <section class="card">
+        <div class="favorite-item">
 
-    <div class="card-title">
-      ♡ My favorites
-    </div>
+          <div class="favorite-icon">
+            🎧
+          </div>
 
-    <div class="grid">
+          Music
 
-      <div class="item">
-
-        <div class="emoji">
-          🎧
         </div>
 
-        Music
+
+        <div class="favorite-item">
+
+          <div class="favorite-icon">
+            🍓
+          </div>
+
+          Sweet
+
+        </div>
+
+
+        <div class="favorite-item">
+
+          <div class="favorite-icon">
+            🌸
+          </div>
+
+          Daily
+
+        </div>
+
 
       </div>
 
-      <div class="item">
+    </section>
 
-        <div class="emoji">
-          🍓
-        </div>
 
-        Sweet
+    <section class="card">
 
+      <div class="card-title">
+        💌 Today's message
       </div>
 
-      <div class="item">
 
-        <div class="emoji">
-          🌸
-        </div>
+      <p id="message">
 
-        Daily
+        今天也要收集一点点开心 ♡
 
-      </div>
-
-    </div>
-
-  </section>
+      </p>
 
 
-  <section class="card">
+      <button
+        class="love-button"
+        onclick="sendHeart()"
+      >
 
-    <div class="card-title">
-      💌 Today's message
-    </div>
+        send me a heart ♡
 
-    <p id="message">
-      今天也要收集一点点开心 ♡
-    </p>
+      </button>
 
-    <button
-      class="love"
-      onclick="love()">
-
-      send me a heart ♡
-
-    </button>
-
-  </section>
+    </section>
 
 
-  <footer>
-    made with love · melody world ♡
-  </footer>
+    <footer>
 
-</div>
+      made with love ·
+      my melody world ♡
+
+    </footer>
 
 
-<script>
+  </main>
 
-function love() {
 
-  document
-    .getElementById("message")
-    .innerText =
-    "收到一颗小爱心啦 ♡";
+  <script>
 
-  for (
-    let i = 0;
-    i < 14;
-    i++
-  ) {
+    function sendHeart() {
 
-    const heart =
-      document.createElement("div");
+      document
+        .getElementById("message")
+        .innerText =
+        "收到一颗粉色小爱心啦 ♡";
 
-    heart.className =
-      "heart";
 
-    heart.innerHTML =
-      "♡";
+      for (
+        let i = 0;
+        i < 15;
+        i++
+      ) {
 
-    heart.style.left =
-      Math.random() * 90
-      + "%";
+        const heart =
+          document.createElement(
+            "div"
+          );
 
-    heart.style.top =
-      65 +
-      Math.random() * 15
-      + "%";
 
-    heart.style.fontSize =
-      15 +
-      Math.random() * 20
-      + "px";
+        heart.className =
+          "heart";
 
-    document.body
-      .appendChild(heart);
 
-    setTimeout(
-      () => heart.remove(),
-      1600
-    );
+        heart.innerHTML =
+          Math.random() > 0.5
+          ? "♡"
+          : "♥";
 
-  }
 
-}
+        heart.style.left =
+          Math.random() * 90
+          + "%";
 
-</script>
+
+        heart.style.top =
+          65
+          + Math.random() * 20
+          + "%";
+
+
+        heart.style.fontSize =
+          15
+          + Math.random() * 20
+          + "px";
+
+
+        document
+          .body
+          .appendChild(heart);
+
+
+        setTimeout(
+          () => {
+            heart.remove();
+          },
+          1600
+        );
+
+      }
+
+    }
+
+  </script>
+
 
 </body>
+
 </html>
